@@ -1,0 +1,8 @@
+README.md
+setup.py
+analyzePredict/__init__.py
+analyzePredict/analyzeModule.py
+analyzePredict.egg-info/PKG-INFO
+analyzePredict.egg-info/SOURCES.txt
+analyzePredict.egg-info/dependency_links.txt
+analyzePredict.egg-info/top_level.txt
