@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 def play_mod():
     print('module works')
 
@@ -9,7 +12,7 @@ def dictionary_of_metrics(items):
 #function 2
 def five_num_summary(items):
     # your code here
-    return {'max':round(max(items), 2), 'median':round(np.median(), 2), 'min': round(min(items), 2), 'q1': round(np.quantile(items, 0.25), 2), 'q3': round(np.quantile(items), 2)}
+    return {'max':round(max(items), 2), 'median':round(np.median(items), 2), 'min': round(min(items), 2), 'q1': round(np.quantile(items, 0.25), 2), 'q3': round(np.quantile(items, 0.75), 2)}
 
 #function3
 def date_parser(dates):
