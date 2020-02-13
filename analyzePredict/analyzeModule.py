@@ -38,3 +38,16 @@ def five_num_summary(items):
     return summary_dict
 
 ### END FUNCTION
+
+
+### START FUNCTION
+def five_num_summary(items):
+    summary_dict = {}                                         # initialise an empty dictionary
+    summary = np.quantile(items,[1, 0.5, 0, 0.25, 0.75])      
+    list1 = ["max","median","min","q1","q3"]                  # create labels for the outputs
+    for i in range(len(list1)):
+        summary_dict[list1[i]] = summary[i]
+                                 
+    return summary_dict
+
+### END FUNCTION
