@@ -10,3 +10,13 @@ def dictionary_of_metrics(items):
      dic['max'] =  round(max(items), 2)
      
      return dic 
+
+def play_mod():
+    print('module works')
+
+### START FUNCTION
+def word_splitter(df):
+    df['Split Tweets'] = df['Tweets'].str.split(' ')
+    return df
+### END FUNCTION
+
