@@ -10,4 +10,11 @@ def word_splitter(df):
   
     return df
 
+
+
+
+### START FUNCTION
+def word_splitter(df):
+    df['Split Tweets'] = df['Tweets'].str.split(' ')
+    return df
 ### END FUNCTION
