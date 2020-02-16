@@ -15,10 +15,7 @@ Input
 Output
 [ '2019-11-29' , '2019-11-29' , '2019-11-29' ]
 
-
 """
-
-
 
     result = []
     for i in range(len(dates)):
