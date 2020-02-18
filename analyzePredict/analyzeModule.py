@@ -11,6 +11,11 @@ def dictionary_of_metrics(items):
     dictionary: returning the 'mean', 'median', 'var','std','min' , 'max',
     corresponding to the mean, median, variance, standard deviation, minimum and maximum of the input list.
 
+    Examples:
+    >>>dictionary_of_metrics(gauteng)
+   {'mean': 26244.42,median': 24403.5, 'var': 108160153.17, 'std': 10400.01, 'min': 8842.0,'max': 39660.0}
+   
+    
 """
      dic = {}
      dic['mean'] = round(np.mean(items), 2)
