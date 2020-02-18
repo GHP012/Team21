@@ -38,8 +38,8 @@ Output
 
 """
 
-    strdate = []
+    strdate = []                       # Define an empty list
     for i in range(len(dates)):
-        strd = dates[i][:10]
-        strdate.append(strd)
+        strd = dates[i][:10]           # Accessing first 10 elements of string
+        strdate.append(strd)           # Inserts the new results into a list
     return strdate
