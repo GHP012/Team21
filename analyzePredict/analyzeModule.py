@@ -51,3 +51,44 @@ def five_num_summary(items):
     return summary_dict
 
 ### END FUNCTION
+
+def five_num_summary(items):
+    """ Returns five number summary
+    
+    Parameters:
+    -----------
+
+        items (list): List of integers or floats
+
+    Returns:
+    -----------
+
+        (dict): Dictionary of five number summary
+
+     Examples
+    -----------
+
+    >>> five_num_summary([7,3,4,9,7,5,57,8,8])
+    {'max': 57.0, 
+     'median': 7.0, 
+     'min': 3.0, 
+     'q1': 5.0, 
+     'q3': 8.0}
+
+    >>> five_num_summary([2,6,4,3,9,4])
+    {'max': 9.0,
+     'median': 4.0,
+     'min': 2.0,
+     'q1': 3.25,
+     'q3': 5.5}
+
+    """
+    summary_dict = {}
+    summary = np.quantile(items,[1, 0.5, 0, 0.25, 0.75])
+    list1 = ["max","median","min","q1","q3"]            
+    for i in range(len(list1)):
+        summary_dict[list1[i]] = summary[i]
+                                 
+    return summary_dict
+
+### END FUNCTION
