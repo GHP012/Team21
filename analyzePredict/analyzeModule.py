@@ -3,7 +3,7 @@ import pandas as pd
 
 def play_mod():
   print('module works')
- 
+
 #Function1
 def dictionary_of_metrics(items):
     `""" Function that calculates the mean, median, variance, standard deviation, minimum and maximum of list in items.
@@ -21,7 +21,7 @@ def dictionary_of_metrics(items):
 
 
      """
-    
+
      dic = {}
      dic['mean'] = round(np.mean(items), 2)
      dic['median'] =round(np.median(items), 2)
@@ -60,12 +60,38 @@ def five_num_summary(items):
 
     return summary_dict
 
-  
+ #Function3
+ def date_parser(dates):
+     """
+     Extracts Date from a list containing datetime series
+
+     Arg:
+     list of datetimes
+
+     Return:
+     A date / list of dates
+
+     Examples:
+     Input
+     [ '2019-11-29 12:50:54' , '2019-11-29 12:46:53' , '2019-11-29 12:46:10']
+
+     Output
+     [ '2019-11-29' , '2019-11-29' , '2019-11-29' ]
+
+     """
+
+     result = []
+     for i in range(len(dates)):
+         res = dates[i][:10]
+         result.append(res)
+     return result
+
+
 
 #Function 6
 def word_splitter(df):
     """ Splits sentences in a dataframe's column and returns a list of the separated words in lowercase
-    
+
     Parameters:
     -----------
 
@@ -74,7 +100,7 @@ def word_splitter(df):
     Returns:
     -----------
 
-        (list): List of the seperated words in lowercase 
+        (list): List of the seperated words in lowercase
 
      Examples
     -----------
@@ -84,4 +110,11 @@ def word_splitter(df):
 
     """
     df['Split Tweets'] = list(map(lambda i: i.lower().split(),df.Tweets))
+    return df
+
+#Function7
+def stop_words_remover(df):
+    
+    splitter = df['Tweets'].apply(lambda x: x.lower().split())
+    df['Without Stop Words'] = splitter.apply(lambda x: [word for word in x if word not in stop_words_dict['stopwords']])
     return df
