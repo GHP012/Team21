@@ -38,8 +38,8 @@ Output
 
 """
 
-    result = []
+    strdate = []
     for i in range(len(dates)):
-        res = dates[i][:10]
-        result.append(res)
-    return result
+        strd = dates[i][:10]
+        strdate.append(strd)
+    return strdate
