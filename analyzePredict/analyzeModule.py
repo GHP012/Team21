@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 # dictionary mapping official municipality twitter handles to the municipality name
+global mun_dict
 mun_dict = {
     '@CityofCTAlerts' : 'Cape Town',
     '@CityPowerJhb' : 'Johannesburg',
@@ -13,6 +14,7 @@ mun_dict = {
 }
 
 # dictionary of english stopwords
+global stop_words_dict
 stop_words_dict = {
     'stopwords':[
         'where', 'done', 'if', 'before', 'll', 'very', 'keep', 'something', 'nothing', 'thereupon', 
