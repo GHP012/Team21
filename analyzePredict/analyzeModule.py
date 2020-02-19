@@ -228,7 +228,7 @@ def number_of_tweets_per_day(df):
     df = df.rename(columns={'Date':'Tweets'})
     df.index.name = 'Date'
     df.sort_index(inplace=True)
-return df
+    return df
 
 #Function 6
 def word_splitter(df):
