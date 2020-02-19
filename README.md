@@ -35,6 +35,10 @@ pip install --upgrade git+https://github.com/OmphileL/Team21.git
 ## Contributing
 Changes only allowed by EDSA staff or invited contributors.
 
+## Authors
+Omphile Louw, Gavin Pillay, Suvarna Chetty, Nombulelo Msibi and Tuduetso Mmokwa
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
