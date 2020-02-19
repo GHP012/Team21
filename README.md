@@ -1,12 +1,18 @@
 # analyzePredict Package
-The package is developed by EDSA students to display their competence in using github repo's and producing pip installable packages. The analyzePredict package contains only a single module (analyzeModule) with 7 functions.
+Packages relates to calculating metrics using Eskom data.
 
 ## Table of contents
+* [General info](#general-info)
 * [Installation](#installation)
-* [Usage](#usage)
+* [Setup](#setup)
+* [Technologies](#technologies)
+* [Description](#description)
 * [Contributing](#contributing)
+* [Status](#status)
 * [License](#license)
 
+## General info
+The package is developed by EDSA students to display their competence in using github repo's and producing pip installable packages. The analyzePredict package contains only a single module (analyzeModule) with 7 functions.
 
 ## Installation
 The module was designed for python3. Use [pip](https://pip.pypa.io/en/stable/) package manager to install analyzePredict Package. This package requires the importing of Numpy and Pandas. The follwing shell commands can be used to install package on local computer. (Internet access will be required)
@@ -19,8 +25,12 @@ The following shell command is used to update to latest version of package
 ```bash
 pip install --upgrade git+https://github.com/OmphileL/Team21.git
 ```
+## Setup
 
-## Usage
+## Technologies 
+
+## Descriptions
+
 This section shows example of how each function in 
 
 Function1 is used to... for example:
@@ -31,6 +41,8 @@ Function1 is used to... for example:
 
 ## Contributing
 Changes only allowed by EDSA staff or invited contributors.
+
+## Status
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
