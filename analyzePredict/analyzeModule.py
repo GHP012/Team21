@@ -89,11 +89,11 @@ def date_parser(dates):
     [ '2019-11-29' , '2019-11-29' , '2019-11-29' ]
     """
 
-    strdate = []                       # Define an empty list
+    result = []                       # Define an empty list
     for i in range(len(dates)):
-        strd = dates[i][:10]           # Accessing first 10 elements of string
-        strdate.append(strd)           # Inserts the new results into a list
-    return strdate
+        res = dates[i][:10]           # Accessing first 10 elements of string
+        result.append(res)           # Inserts the new results into a list
+    return result
 
 #function4
 def extract_municipality_hashtags(df):
