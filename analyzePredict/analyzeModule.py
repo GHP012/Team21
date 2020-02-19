@@ -6,7 +6,7 @@ def play_mod():
 
 #Function1
 def dictionary_of_metrics(items):
-    `""" Function that calculates the mean, median, variance, standard deviation, minimum and maximum of list in items.
+    """ Function that calculates the mean, median, variance, standard deviation, minimum and maximum of list in items.
 
        Parameters:
          items(list): takes up a list of numbers.
@@ -204,7 +204,32 @@ def word_splitter(df):
 
 #Function7
 def stop_words_remover(df):
+    ''' Function counts removes english stop words from a tweet.
+
+    parameter
+    ---------
+      df(DataFrame): pandas dataframe as input containing Twitter information
+
+    returns
+    -------
+      (DataFrame): df DataFrame with additional column called 'Without Stop Words'. The column contains 
+                   tokenised Tweets without stop-words and tokenized tweet is then added to column within
+                   a list. 
     
+    Example
+    -------
+    >>> twitter_feed = pd.DataFrame({'Tweets':['Cremora above the fridge', 'We'er almost done', 'Good work guys'],
+                             'Date': ['2019-11-29 12:17:43', '2019-11-28 13:34:41', '2020-02-19 07:00:00']})
+    >>> stop_words_remover(twitter_feed)
+    
+               
+                         Tweets                  Date  Without Stop Words
+    0  Cremora above the fridge   2019-11-29 12:17:43 	[cremora, fridge]  
+    1         We'er almost done   2019-11-28 13:34:41             [we'er]
+    2            Good work guys	  2020-02-19 07:00:00  [good, work, guys]
+
+    '''
+
     splitter = df['Tweets'].apply(lambda x: x.lower().split())
     df['Without Stop Words'] = splitter.apply(lambda x: [word for word in x if word not in stop_words_dict['stopwords']])
 
