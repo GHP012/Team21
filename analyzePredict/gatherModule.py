@@ -26,7 +26,7 @@ def __format_day(date):
     day = '0' + str(date.day) if len(str(date.day)) == 1 else str(date.day)
     month = '0' + str(date.month) if len(str(date.month)) == 1 else str(date.month)
     year = str(date.year)
-    return '-'.join([year, month, day, hour, minutes, seconds])
+    return '-'.join([year, month, day]) + ' ' + ':'.join(hour, minutes, seconds])
 
 # Create a twitter search url given a username, start (since), and end (until) dates. 
 def __form_url(username, since, until):
