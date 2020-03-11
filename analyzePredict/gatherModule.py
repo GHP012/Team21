@@ -20,10 +20,13 @@ def initialize_webdriver():
 
 # Take a datetime object and return the date as a string (yyyy-mm-dd)
 def __format_day(date):
+    hour = str(date.hour)
+    minutes = str(date.minutes)
+    seconds = str(date.seconds)
     day = '0' + str(date.day) if len(str(date.day)) == 1 else str(date.day)
     month = '0' + str(date.month) if len(str(date.month)) == 1 else str(date.month)
     year = str(date.year)
-    return '-'.join([year, month, day])
+    return '-'.join([year, month, day, hour, minutes, seconds])
 
 # Create a twitter search url given a username, start (since), and end (until) dates. 
 def __form_url(username, since, until):
