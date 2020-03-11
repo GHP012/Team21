@@ -36,9 +36,9 @@ def __increment_day(date, i):
     return date + datetime.timedelta(days=i)
 
 
-def pull_tweets(username='Eskom_SA',
-        start=datetime.datetime(2018, 3, 7, 0, 0, 0),
-         end=datetime.datetime(2018, 3, 11, 23, 59, 59)):
+def pull_tweets(username = 'Eskom_SA', 
+                start = datetime.datetime(2018, 3, 7, 0, 0, 0), 
+                end = datetime.datetime(2018, 3, 11, 23, 59, 59)):
 
     """
     Twitter scrapper function
@@ -68,9 +68,8 @@ def pull_tweets(username='Eskom_SA',
     1  2020-03-05 08:23:49   #Eskom #MediaStatement\n\nEskom to institute l...
     2  2020-03-05 08:22:00   #EskomExpoTurns40 Have YOU participated in Esk...
     3  ...
-    4  ...
+    4  ....
     """
-
     
     days = (end - start).days + 1 # find the number of days between specified dates
     username = username.lower() # convert username to lowercase
