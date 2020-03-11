@@ -9,7 +9,6 @@ import datetime #for date formatting
 from IPython.display import display
 import pyodbc
 
-
 def twitter_df(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
     """
     Twitter scrapper function
@@ -58,11 +57,11 @@ def twitter_df(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
     
     tweets_df['date'] = dates_for_col
     tweets_df['tweet'] =  tweets_for_col
-    
+  
     
     return tweets_df
    
- def __twitter_setup(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET):
+def __twitter_setup(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET):
     """
     Utility function to setup the Twitter's API
     with access and consumer keys from Twitter.
