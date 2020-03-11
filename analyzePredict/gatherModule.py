@@ -19,24 +19,24 @@ def initialize_webdriver():
     return driver
 
 # Take a datetime object and return the date as a string (yyyy-mm-dd)
-def format_day(date):
+def __format_day(date):
     day = '0' + str(date.day) if len(str(date.day)) == 1 else str(date.day)
     month = '0' + str(date.month) if len(str(date.month)) == 1 else str(date.month)
     year = str(date.year)
     return '-'.join([year, month, day])
 
 # Create a twitter search url given a username, start (since), and end (until) dates. 
-def form_url(username, since, until):
+def __form_url(username, since, until):
     p1 = 'https://twitter.com/search?f=tweets&vertical=default&q=from%3A'
     p2 =  username + '%20since%3A' + since + '%20until%3A' + until + 'include%3Aretweets&src=typd'
     return p1 + p2
 
 # Add a given number of days to the given date
-def increment_day(date, i):
+def __increment_day(date, i):
     return date + datetime.timedelta(days=i)
 
 
-def pull_tweets(username = 'Eskom_SA', start = datetime.datetime(2018, 3, 7, 0, 0, 0), end = datetime.datetime(2018, 3, 9, 23, 59, 59)):
+def pull_tweets(username = 'Eskom_SA', start = datetime.datetime(2018, 3, 7, 0, 0, 0), end = datetime.datetime(2018, 3, 11, 23, 59, 59)):
     
     days = (end - start).days + 1 # find the number of days between specified dates
     username = username.lower() # convert username to lowercase
@@ -48,9 +48,9 @@ def pull_tweets(username = 'Eskom_SA', start = datetime.datetime(2018, 3, 7, 0, 
     for day in range(days):
      
         # Create twitter url between d1 and d2
-        d1 = format_day(increment_day(start, 0))
-        d2 = format_day(increment_day(start, 1))
-        url = form_url(username, d1, d2)
+        d1 = __format_day(__increment_day(start, 0))
+        d2 = __format_day(__increment_day(start, 1))
+        url = __form_url(username, d1, d2)
         print(url)
         print(d1)
      
@@ -99,7 +99,7 @@ def pull_tweets(username = 'Eskom_SA', start = datetime.datetime(2018, 3, 7, 0, 
             print('no tweets on this day')
      
         # increment the start date by 1 day
-        start = increment_day(start, 1)
+        start = __increment_day(start, 1)
     driver.delete_all_cookies()
     driver.__exit__
     driver.close()
