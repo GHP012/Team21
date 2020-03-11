@@ -51,6 +51,9 @@ def pull_tweets(username='Eskom_SA',
     The input is data taken directly from Twitter.
     The output is a column with the date as a string and another with the tweet
     as a string.
+    
+    NB! Function makes use of Chrome webdriver. User must ensure that correct 
+    webdriver is included in working directory. 
 
         Parameters:
         ----------
@@ -66,7 +69,7 @@ def pull_tweets(username='Eskom_SA',
 
         Example of output:
         ------------------
-        _Date_                                   _Tweets_
+        date                                   tweet
     1  2020-03-05 08:23:49   #Eskom #MediaStatement\n\nEskom to institute l...
     2  2020-03-05 08:22:00   #EskomExpoTurns40 Have YOU participated in Esk...
     3  ...
