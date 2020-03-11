@@ -9,7 +9,7 @@ import datetime #for date formatting
 from IPython.display import display
 import pyodbc
 
-def pull_tweets(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
+def pull_tweets(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET, count=100):
     """
     Twitter scrapper function
     This function takes in tweets from specified Twitter account and returns a
@@ -26,10 +26,11 @@ def pull_tweets(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
 
         Parameters:
         ----------
-        CONSUMER_KEY
-        CONSUMER_SECRET 
-        ACCESS_TOKEN
-        ACCESS_SECRET
+        CONSUMER_KEY(str)
+        CONSUMER_SECRET(str)
+        ACCESS_TOKEN(str)
+        ACCESS_SECRET(str)
+        count(str)= number of tweets scraped from twitter
 
         Returns:
         --------
