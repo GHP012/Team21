@@ -9,7 +9,7 @@ import datetime #for date formatting
 from IPython.display import display
 import pyodbc
 
-def twitter_df(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
+def pull_tweets(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET ):
     """
     Twitter scrapper function
     This function takes in tweets from specified Twitter account and returns a
