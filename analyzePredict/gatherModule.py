@@ -36,7 +36,43 @@ def __increment_day(date, i):
     return date + datetime.timedelta(days=i)
 
 
-def pull_tweets(username = 'Eskom_SA', start = datetime.datetime(2018, 3, 7, 0, 0, 0), end = datetime.datetime(2018, 3, 11, 23, 59, 59)):
+def pull_tweets(username='Eskom_SA',
+        start=datetime.datetime(2018, 3, 7, 0, 0, 0),
+         end=datetime.datetime(2018, 3, 11, 23, 59, 59)):
+
+    """
+    Twitter scrapper function
+
+    This function takes in tweets from specified Twitter account and returns a
+    DataFrame with two columns.This script requires that 'selenium' and
+    'pandas' be installed into the Python enviroment you are running.
+    The columns consist of one where the date is shown and another with all the
+    charaters in the tweet.
+    The input is data taken directly from Twitter.
+    The output is a column with the date as a string and another with the tweet
+    as a string.
+
+        Parameters:
+        ----------
+        username(str) = twitter_handle
+        start(datetime.datetime) = year, month, day, hour, minute, second
+        end(datetime.datetime) = year, month, day, hour, minute, second
+
+
+        Returns:
+        --------
+        DataFrame with two columns with the date and characters of tweets
+        scrapped from twitter website
+
+        Example of output:
+        ------------------
+        _Date_                                   _Tweets_
+    1  2020-03-05 08:23:49   #Eskom #MediaStatement\n\nEskom to institute l...
+    2  2020-03-05 08:22:00   #EskomExpoTurns40 Have YOU participated in Esk...
+    3  ...
+    4  ...
+    """
+
     
     days = (end - start).days + 1 # find the number of days between specified dates
     username = username.lower() # convert username to lowercase
