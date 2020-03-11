@@ -20,9 +20,9 @@ def initialize_webdriver():
 
 # Take a datetime object and return the date as a string (yyyy-mm-dd)
 def __format_day(date):
-    hour = str(date.hour)
-    minute = str(date.minute)
-    second = str(date.second)
+    hour = '0' + str(date.hour) if len(str(date.hour)) == 1 else str(date.hour)
+    minute = '0' + str(date.minute) if len(str(date.minute)) == 1 else str(date.minute)
+    second = '0' + str(date.second) if len(str(date.second)) == 1 else str(date.second)
     day = '0' + str(date.day) if len(str(date.day)) == 1 else str(date.day)
     month = '0' + str(date.month) if len(str(date.month)) == 1 else str(date.month)
     year = str(date.year)
@@ -76,7 +76,7 @@ def pull_tweets(username='Eskom_SA',
     1  2020-03-05 08:23:49   #Eskom #MediaStatement\n\nEskom to institute l...
     2  2020-03-05 08:22:00   #EskomExpoTurns40 Have YOU participated in Esk...
     3  ...
-    4  ...
+    4  ....
     """
 
     
