@@ -48,7 +48,7 @@ def pull_tweets(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET, coun
    
     extractor = __twitter_setup(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
     
-    tweets = extractor.user_timeline(id = '@Eskom_SA' , count=100,
+    tweets = extractor.user_timeline(id = '@Eskom_SA' , count=count,
                                  include_rts=True)
     
     tweets_for_col = [tweet.text for tweet in tweets]
