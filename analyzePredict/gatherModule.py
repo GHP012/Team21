@@ -20,13 +20,10 @@ def initialize_webdriver():
 
 # Take a datetime object and return the date as a string (yyyy-mm-dd)
 def __format_day(date):
-    hour = '0' + str(date.hour) if len(str(date.hour)) == 1 else str(date.hour)
-    minute = '0' + str(date.minute) if len(str(date.minute)) == 1 else str(date.minute)
-    second = '0' + str(date.second) if len(str(date.second)) == 1 else str(date.second)
     day = '0' + str(date.day) if len(str(date.day)) == 1 else str(date.day)
     month = '0' + str(date.month) if len(str(date.month)) == 1 else str(date.month)
     year = str(date.year)
-    return '-'.join([year, month, day]) + ' ' + ':'.join([hour, minute, second])
+    return '-'.join([year, month, day])
 
 # Create a twitter search url given a username, start (since), and end (until) dates. 
 def __form_url(username, since, until):
@@ -45,7 +42,6 @@ def pull_tweets(username='Eskom_SA',
 
     """
     Twitter scrapper function
-
     This function takes in tweets from specified Twitter account and returns a
     DataFrame with two columns.This script requires that 'selenium' and
     'pandas' be installed into the Python enviroment you are running.
@@ -57,26 +53,22 @@ def pull_tweets(username='Eskom_SA',
     
     NB! Function makes use of Chrome webdriver. User must ensure that correct 
     webdriver is included in working directory. 
-
         Parameters:
         ----------
         username(str) = twitter_handle
         start(datetime.datetime) = year, month, day, hour, minute, second
         end(datetime.datetime) = year, month, day, hour, minute, second
-
-
         Returns:
         --------
         DataFrame with two columns with the date and characters of tweets
         scrapped from twitter website
-
         Example of output:
         ------------------
         date                                   tweet
     1  2020-03-05 08:23:49   #Eskom #MediaStatement\n\nEskom to institute l...
     2  2020-03-05 08:22:00   #EskomExpoTurns40 Have YOU participated in Esk...
     3  ...
-    4  ....
+    4  ...
     """
 
     
@@ -146,4 +138,3 @@ def pull_tweets(username='Eskom_SA',
     driver.__exit__
     driver.close()
     return pd.DataFrame(tweets_list)
-
